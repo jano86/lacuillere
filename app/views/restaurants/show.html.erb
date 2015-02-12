@@ -1,0 +1,16 @@
+<h1>You picked</h1>
+<h2><%= @restaurant.name %></h2>
+<p>Category: <%=@restaurant.category%></p>
+<p><i><%= @restaurant.address %></i></p>
+
+<!-- ask for a new review -->
+
+<%= render partial: "formreview" %>
+
+<!-- show reviews -->
+<% @restaurant.reviews.each do |review| %>
+<p><%= review.content %></p>
+<p><i><%= review.rating %></i></p>
+<% end %>
+
+<p><%= link_to "Back to list", restaurants_path %></p>
